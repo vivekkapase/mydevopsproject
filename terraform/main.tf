@@ -10,8 +10,8 @@ terraform {
 
 provider "aws" {
   region  = "us-west-2"  # Choose your desired region
-  access_key = "AKIAZQ3DUQCFHBJFH46T"
-  secret_key = "NaCQJ7b1o7B0Mq1g7WE2LJnIxYgw1ujAvrzlHzby"
+  access_key = ""
+  secret_key = ""
   profile = "VKDevOps"  # Specify your AWS profile
 }
 
