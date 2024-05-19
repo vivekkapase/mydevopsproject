@@ -41,15 +41,13 @@ resource "aws_subnet" "my_subnet" {
     device_index         = 0
   }
 
-  credit_specification {
-    cpu_credits = "unlimited"
-  }
+
   tags = {
     Name = "tf-example"
   }
 }
 
-resource "aws_network_interface" "foo" {
+resource "aws_network_interface" "nic-ec2-1" {
   subnet_id   = aws_subnet.my_subnet.id
   private_ips = ["172.31.0.100"]
 

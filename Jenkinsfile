@@ -1,8 +1,6 @@
 pipeline {
     agent any
-    node {
-    def workspace = pwd()
-    }
+    
     stages {
     stage ('Pre-task') {
         
@@ -14,9 +12,10 @@ pipeline {
         string(credentialsId: 'AWS_CLI_ACCESS_KEY_SECRET', variable: 'AWS_CLI_KEY_SECRET')]) 
     {
     sh '''
-    cd ${workspace}/terraform
+    cd terraform
     pwd
     terraform init
+    terraform plan
     '''
     }
 
