@@ -1,6 +1,8 @@
 pipeline {
     agent any
-
+    node {
+    def workspace = pwd()
+    }
     stages {
     stage ('Pre-task') {
         
