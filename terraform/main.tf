@@ -22,3 +22,10 @@ resource "aws_subnet" "my_subnet" {
 
 }
 
+variable "access_key" {
+  
+}
+
+variable "secret_key" {
+  
+}
