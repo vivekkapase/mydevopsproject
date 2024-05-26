@@ -23,9 +23,14 @@ resource "aws_subnet" "my_subnet" {
 }
 
 variable "access_key" {
+  description = "AWS access_key"
+  type        = string
+  default     = ""
   
 }
 
 variable "secret_key" {
-  
+  description = "AWS secret_key"
+  type        = string
+  default     = ""
 }
