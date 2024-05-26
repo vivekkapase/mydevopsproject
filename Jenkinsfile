@@ -17,9 +17,12 @@ pipeline {
     sh '''
     cd terraform
     pwd
+
+    export AWS_ACCESS_KEY_ID="$AWS_ACCESS_KEY_ID"
+    export AWS_SECRET_ACCESS_KEY="$AWS_SECRET_ACCESS_KEY"
     terraform init 
     terraform validate
-    terraform plan --var="access_key=$AWS_ACCESS_KEY_ID" --var="secret_key=$AWS_SECRET_ACCESS_KEY"
+    terraform plan 
     '''
     
 
