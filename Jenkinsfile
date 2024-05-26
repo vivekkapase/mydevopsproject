@@ -26,8 +26,10 @@ pipeline {
       }
      }
     stage ("CleanupWS")
+    steps {
     {
         cleanWS()
+    }
     }
     }
 }
