@@ -15,14 +15,6 @@ provider "aws" {
   profile = "VKDevOps"  # Specify your AWS profile
 }
 
-resource "aws_instance" "test_server1" {
-  ami           = "ami-0f7197c592205b389"  # Replace with your RHEL AMI ID
-  instance_type = "t2.micro"
-  tags = {
-    Name = "MyRedHatInstance"  # Customize the instance name
-  }
-}
-
 resource "aws_vpc" "vpc1" {
   cidr_block = "172.31.0.0/16"
 
