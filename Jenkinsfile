@@ -14,7 +14,7 @@ pipeline {
     sh '''
     cd terraform
     pwd
-    terraform init
+    terraform init --var=
     terraform plan
     '''
     }
