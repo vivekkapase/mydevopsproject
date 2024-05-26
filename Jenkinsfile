@@ -13,7 +13,7 @@ pipeline {
     // withCredentials([
     //     string(credentialsId: 'AWS_CLI_ACCESS_KEY', variable: 'AWS_CLI_KEY_ID'), 
     //     string(credentialsId: 'AWS_CLI_ACCESS_KEY_SECRET', variable: 'AWS_CLI_KEY_SECRET')]) 
-    {
+    
     sh '''
     cd terraform
     pwd
@@ -21,7 +21,7 @@ pipeline {
     terraform validate
     terraform plan --var="access_key=$AWS_ACCESS_KEY_ID" --var="secret_key=$AWS_SECRET_ACCESS_KEY"
     '''
-    }
+    
 
       }
      }
