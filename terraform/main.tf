@@ -12,7 +12,7 @@ provider "aws" {
   region  = "us-west-2"  # Choose your desired region
   access_key = "var.AWS_CLI_KEY_ID"
   secret_key = "var.AWS_CLI_KEY_SECRET"
-  profile = "VKDevOps"  # Specify your AWS profile
+#  profile = "VKDevOps"  # Specify your AWS profile
 }
 
 resource "aws_vpc" "vpc1" {
