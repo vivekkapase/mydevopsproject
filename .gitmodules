@@ -1,0 +1,3 @@
+[submodule "tweet-trend"]
+	path = tweet-trend
+	url = https://github.com/ravdy/tweet-trend.git
