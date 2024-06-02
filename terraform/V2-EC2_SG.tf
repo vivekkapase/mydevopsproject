@@ -30,6 +30,15 @@ resource "aws_security_group" "demo-sg" {
 
   }
 
+  ingress {
+    description = "Allow jenkins port 8080"
+    from_port   = 8080
+    to_port     = 8080
+    protocol    = "TCP"
+    cidr_blocks = ["0.0.0.0/0"]
+
+  }
+
   egress {
     from_port   = 0
     to_port     = 0
