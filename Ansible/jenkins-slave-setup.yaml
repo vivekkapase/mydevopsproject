@@ -1,0 +1,25 @@
+---
+- hosts: jenkins-slave
+  become: true
+  tasks:
+  - name: update ubuntu repos
+    apt:
+      update_cache: true
+      force_apt_get: true
+      cache_valid_time: 3600
+  
+  - name: install java
+    apt:  
+      name: openjdk-11-jre
+      state: present
+
+  - name: install maven
+    get_url: 
+      url: https://dlcdn.apache.org/maven/maven-3/3.9.7/binaries/apache-maven-3.9.7-bin.tar.gz
+      dest: /opt/
+
+  - name: extract maven tar
+    unarchive:
+      src: /opt/apache-maven-3.9.7-bin.tar.gz
+      dest: /usr/local/bin
+      remote_src: yes
