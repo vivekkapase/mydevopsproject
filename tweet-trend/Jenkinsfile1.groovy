@@ -11,7 +11,9 @@ environment {
     stages {
         stage('Build code') {
             steps {
-                sh 'mvn clean deploy'
+                sh '
+                cd tweet-trend
+                mvn clean deploy'
             }
         }
     }
