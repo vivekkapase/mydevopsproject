@@ -1,3 +1,4 @@
+def registry = 'https://vivekdevops.jfrog.io/'
 pipeline {
     agent {
         node{
@@ -38,7 +39,7 @@ environment {
         
         stage("Jar Artifact Publish over Jfrog") {
          steps {
-            def registry = 'https://vivekdevops.jfrog.io/'
+            
             script {
                     echo '<--------------- Jar Publish Started --------------->'
                      def server = Artifactory.newServer url:registry+"/artifactory" ,  credentialsId:"vivek-jfrog-token"
