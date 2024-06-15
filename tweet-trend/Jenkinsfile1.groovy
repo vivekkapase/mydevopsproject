@@ -23,7 +23,7 @@ environment {
            scannerHome = tool 'vivek-sonar-scanner'
         }
         steps {
-        sh '''JAVA_HOME=/etc/alternatives/java && export JAVA_HOME && mvn -X sonar:sonar -DskipTests=true'''
+        sh '''JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64/bin/java && export JAVA_HOME && mvn -X sonar:sonar -DskipTests=true'''
         withSonarQubeEnv('sonarqube-server') { // If you have configured more than one global server connection, you can specify its name
         sh "${scannerHome}/bin/sonar-scanner"
         }
