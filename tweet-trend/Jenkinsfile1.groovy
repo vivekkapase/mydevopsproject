@@ -19,12 +19,15 @@ environment {
             }
         }
         stage('SonarQube analysis') {
+        tools {
+        jdk "vivek-jdk" // the name you have given the JDK installation in Global Tool Configuration
+         }
         environment {
            scannerHome = tool 'vivek-sonar-scanner'
         }
         steps {
         withSonarQubeEnv('sonarqube-server') { // If you have configured more than one global server connection, you can specify its name
-        sh "${scannerHome}/bin/sonar-scanner"
+        sh "${scannerHome}/bin/sonar-scanner -X"
         }
         }
         
