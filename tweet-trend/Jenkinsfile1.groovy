@@ -1,4 +1,6 @@
 def registry = 'https://vivekdevops.jfrog.io'
+def imageName = 'vivekdevops.jfrog.io/vivek-release-docker-local/vk-ttrend'
+def version   = '2.1.4'
 pipeline {
     agent {
         node{
@@ -62,6 +64,28 @@ environment {
             
             }
         }   
-      }   
+      }
+
+    stage(" Docker Build ") {
+        steps {
+        script {
+           echo '<--------------- Docker Build Started --------------->'
+           app = docker.build(imageName+":"+version)
+           echo '<--------------- Docker Build Ends --------------->'
+        }
+      }
+    }
+
+    stage (" Docker Publish "){
+        steps {
+            script {
+               echo '<--------------- Docker Publish Started --------------->'  
+                docker.withRegistry(registry, 'vivek-jfrog-token'){
+                    app.push()
+                }    
+               echo '<--------------- Docker Publish Ended --------------->'  
+            }
+        }
+    }   
     }
 }
