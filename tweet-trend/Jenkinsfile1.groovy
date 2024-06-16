@@ -87,6 +87,14 @@ environment {
                echo '<--------------- Docker Publish Ended --------------->'  
             }
         }
-    }   
+    } 
+
+    stage ("Deploy over EKS") {
+        steps {
+            script {
+                sh './deploy.sh'
+            }
+        }
+    }  
     }
 }
