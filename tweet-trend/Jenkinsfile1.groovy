@@ -92,7 +92,8 @@ environment {
     stage ("Deploy over EKS") {
         steps {
             script {
-                sh './tweet-trend/deploy.sh'
+                sh 'cd tweet-trend
+                    ./deploy.sh'
             }
         }
     }  
