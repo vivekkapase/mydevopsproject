@@ -17,7 +17,7 @@ spec:
       - name: jfrogcred
       containers:
       - name:  vkdevops-rtp
-        image: vivekdevops.jfrog.io/vivek-release-docker-local/vk-ttrend:2.1.4
+        image: vivekdevops.jfrog.io/vivek-release-docker-local/vk-ttrend:2.1.5
         imagePullPolicy: Always
         ports:
         - containerPort: 8000
