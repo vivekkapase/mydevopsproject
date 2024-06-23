@@ -102,14 +102,14 @@ resource "aws_route_table_association" "project-rta-subnet02" {
 }
 
 
-module "sgs" {
-  source = "../sg_eks"
-  vpc_id = aws_vpc.project-vpc.id
-}
+# module "sgs" {
+#   source = "../sg_eks"
+#   vpc_id = aws_vpc.project-vpc.id
+# }
 
-module "eks" {
-  source     = "../eks"
-  vpc_id     = aws_vpc.project-vpc.id
-  subnet_ids = [aws_subnet.project-subnet-01.id, aws_subnet.project-subnet-02.id]
-  sg_ids     = module.sgs.security_group_public
-}
+# module "eks" {
+#   source     = "../eks"
+#   vpc_id     = aws_vpc.project-vpc.id
+#   subnet_ids = [aws_subnet.project-subnet-01.id, aws_subnet.project-subnet-02.id]
+#   sg_ids     = module.sgs.security_group_public
+# }
