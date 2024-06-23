@@ -89,7 +89,7 @@ environment {
         }
     } 
 
-    stage ("Deploy over EKS using helm") {
+    stage ("Deploy over EKS using Helm") {
         steps {
             script {
                 sh '''cd tweet-trend
