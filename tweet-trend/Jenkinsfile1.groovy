@@ -70,7 +70,7 @@ environment {
         steps {
         script {
            echo '<--------------- Docker Build Started --------------->'
-           whoami
+           
            app = docker.build(imageName+":"+version,"./tweet-trend")
            echo '<--------------- Docker Build Ends --------------->'
         }
