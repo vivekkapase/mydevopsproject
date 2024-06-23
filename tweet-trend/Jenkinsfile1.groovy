@@ -89,11 +89,11 @@ environment {
         }
     } 
 
-    stage ("Deploy over EKS") {
+    stage ("Deploy over EKS using helm") {
         steps {
             script {
                 sh '''cd tweet-trend
-                    ./deploy.sh'''
+                    helm install ttrend ttrend-1.0.0.tgz'''
             }
         }
     }  
